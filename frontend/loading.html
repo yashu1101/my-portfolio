@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Loading — YashDev</title>
+    <style>
+      :root {
+        --bg: #0b0f0b; /* very dark */
+        --card: #0f1410;
+        --accent: #a7f129; /* lime green */
+        --muted: rgba(167, 241, 41, 0.15);
+        --text: #dbe6d1;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(180deg, var(--bg), #071006);
+        color: var(--text);
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          "Helvetica Neue",
+          Arial;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        padding: 2rem;
+      }
+      .card {
+        width: min(720px, 96vw);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.01),
+          rgba(255, 255, 255, 0.02)
+        );
+        border: 1px solid rgba(167, 241, 41, 0.08);
+        box-shadow: 0 8px 30px rgba(2, 6, 2, 0.6);
+        border-radius: 14px;
+        padding: 3.25rem 2.5rem;
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+      }
+      .logo {
+        font-weight: 700;
+        letter-spacing: 0.6px;
+        font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+        color: var(--text);
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .accent-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow:
+          0 0 18px var(--muted),
+          0 0 6px rgba(167, 241, 41, 0.6) inset;
+      }
+      /* spinner */
+      .spinner {
+        --size: 84px;
+        width: var(--size);
+        height: var(--size);
+        border-radius: 50%;
+        position: relative;
+        display: grid;
+        place-items: center;
+        margin-top: 6px;
+      }
+      .ring {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 6px solid transparent;
+        border-top-color: var(--accent);
+        filter: drop-shadow(0 6px 20px rgba(167, 241, 41, 0.08));
+        animation: spin 1.25s linear infinite;
+      }
+      .ring.r2 {
+        border-width: 4px;
+        opacity: 0.6;
+        animation-duration: 1.8s;
+        border-left-color: var(--accent);
+      }
+      .ring.r3 {
+        border-width: 3px;
+        opacity: 0.35;
+        animation-duration: 2.6s;
+        border-bottom-color: var(--accent);
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .subtext {
+        color: #93a78a;
+        opacity: 0.9;
+        margin-top: 0.85rem;
+        font-size: 0.95rem;
+      }
+      /* responsive layout for small screens */
+      @media (max-width: 420px) {
+        .card {
+          padding: 2rem;
+          border-radius: 12px;
+        }
+        .spinner {
+          --size: 64px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card" role="status" aria-live="polite">
+      <div class="logo">
+        <span class="accent-dot" aria-hidden="true"></span><span>YashDev</span>
+      </div>
+
+      <div class="spinner" aria-hidden="true">
+        <div class="ring r1"></div>
+        <div class="ring r2"></div>
+        <div class="ring r3"></div>
+      </div>
+
+      <div class="subtext">Preparing things... Please wait</div>
+    </div>
+  </body>
+</html>

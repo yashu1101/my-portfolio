@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yash Choudhary — MERN Stack Specialist</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+   
+  </head>
+  <body>
+    <div class="page-loader" id="pageLoader">
+      <div class="loader-shell">
+        <div class="loader-ring"></div>
+        <div class="loader-text">YashDev</div>
+      </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- NAV -->
+    <nav>
+      <div class="nav-logo">
+        Yash<span>.</span><span style="color: white">Dev</span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-bg-blob"></div>
+      <div class="hero-grid-lines"></div>
+
+      <div class="hero-content">
+        <div class="hero-label">Available for Work</div>
+        <h1 class="hero-name">
+          Hello, I'm<br />
+          <span class="highlight">Yash</span> Choudhary
+        </h1>
+        <p class="hero-role">
+          <span>MERN Stack Specialist</span> | Software Developer
+        </p>
+        <p class="hero-intro">
+          I build clean and scalable web applications from scratch. I love
+          turning complex ideas into user-friendly websites using React,
+          Node.js, and MongoDB.
+        </p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-primary"
+            ><i class="fas fa-paper-plane"></i> Hire Me</a
+          >
+          <a href="#" class="btn-outline" onclick="downloadResume()"
+            ><i class="fas fa-download"></i> Resume</a
+          >
+        </div>
+        <div class="hero-stats">
+          <!-- <div class="stat">
+            <div class="stat-num">3+</div>
+            <div class="stat-label">Years Learning</div>
+          </div> -->
+          <div class="stat">
+            <div class="stat-num"></div>
+            <div class="stat-label">Projects Done</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">5+</div>
+            <div class="stat-label">Technologies</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-avatar-wrap">
+          <div class="avatar-ring"></div>
+          <div class="avatar-inner">
+            <span>👨‍💻</span>
+          </div>
+          <div class="hero-badge badge-1">
+            <div class="badge-dot"></div>
+            <span>Open to opportunities</span>
+          </div>
+          <div class="hero-badge badge-2">
+            <i class="fab fa-react" style="color: #61dafb"></i>
+            <span>MERN Stack</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div data-aos="fade-up">
+        <div class="section-tag">Academic Background</div>
+        <h2 class="section-title">My <span class="hl">Education</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">
+          Where I built my technical foundation, blending computer science
+          principles with hands-on software engineering practices.
+        </p>
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="100">
+        <div class="edu-card">
+          <div class="edu-icon">🎓</div>
+          <div class="edu-degree">Bachelor of Technology (B.Tech)</div>
+          <div class="edu-inst">
+            Baderia Global Institute of Engineering and Management
+          </div>
+          <p
+            style="
+              color: var(--muted);
+              font-size: 0.82rem;
+              margin: 0.6rem 0 1rem;
+              line-height: 1.6;
+            ">
+            Focused on computer science fundamentals and modern software
+            development practices.
+          </p>
+          <span class="edu-year">📅 Graduated 2024</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div data-aos="fade-up">
+        <div class="section-tag">Technical Arsenal</div>
+        <h2 class="section-title">My <span class="hl">Skills</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">
+          Technologies I work with to build full-stack applications from the
+          ground up.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="0">
+          <div class="skill-icon">
+            <img class="skill-icon-img" src="icons\html-5.png" alt="" />
+          </div>
+          <div class="skill-name">HTML5</div>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="60">
+          <div class="skill-icon">
+            <img class="skill-icon-img" src="icons\css-3.png" alt="" />
+          </div>
+          <div class="skill-name">CSS3</div>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="120">
+          <div class="skill-icon">
+            <img class="skill-icon-img" src="icons\js.png" alt="" />
+          </div>
+          <div class="skill-name">JavaScript</div>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="180">
+          <div class="skill-icon">
+            <img class="skill-icon-img" src="icons\react.png" alt="" />
+          </div>
+          <div class="skill-name">React.js</div>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="240">
+          <div class="skill-icon">
+            <img class="skill-icon-img" src="icons\node-js.png" alt="" />
+          </div>
+          <div class="skill-name">Node.js</div>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+          <div class="skill-icon">
+            <img class="skill-icon-img" src="icons\express-js.png" alt="" />
+          </div>
+          <div class="skill-name">Express.js</div>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="360">
+          <div class="skill-icon">
+            <img class="skill-icon-img" src="icons\mongodb.png" alt="" />
+          </div>
+          <div class="skill-name">MongoDB</div>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="420">
+          <div class="skill-icon">
+            <img class="skill-icon-img" src="icons\typescript.png" alt="" />
+          </div>
+          <div class="skill-name">TypeScript</div>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="480">
+          <div class="skill-icon">
+            <img class="skill-icon-img" src="icons\tailwind.png" alt="" />
+          </div>
+          <div class="skill-name">Tailwind CSS</div>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="540">
+          <div class="skill-icon">
+            <img class="skill-icon-img" src="icons\nextjs.png" alt="" />
+          </div>
+          <div class="skill-name">Next.js</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div data-aos="fade-up">
+        <div class="section-tag">Portfolio Work</div>
+        <h2 class="section-title">Featured <span class="hl">Projects</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">
+          Real-world applications built with modern technologies and clean
+          architecture.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+      <!-- PROJECT CARDS WILL BE DYNAMICALLY INJECTED HERE BY JAVASCRIPT -->
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div data-aos="fade-up">
+        <div class="section-tag">Get In Touch</div>
+        <h2 class="section-title">Let's <span class="hl">Connect</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Open for opportunities</p>
+      </div>
+
+      <div class="contact-grid">
+        <div data-aos="fade-right" data-aos-delay="100">
+          <div class="contact-item">
+            <div class="contact-icon-box">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <div class="contact-label">Location</div>
+              <div class="contact-value">Jabalpur, MP, India</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon-box"><i class="fas fa-envelope"></i></div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-value">
+                <a href="mailto:yash@example.com"
+                  >yashchoudhary1101@gmail.com</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon-box"><i class="fas fa-briefcase"></i></div>
+            <div>
+              <div class="contact-label">Status</div>
+              <div class="contact-value" style="color: var(--accent)">
+                🟢 Available for Work
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="fade-left" data-aos-delay="200">
+          <div class="social-section-title">Find me on</div>
+          <div class="socials-grid">
+            <a href="https://github.com/yashu1101" class="social-card">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/public-profile/settings/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact_info%3BQJQV2EnKQvO33Gxfl7LSjg%3D%3D"
+              class="social-card">
+              <i class="fab fa-linkedin-in" style="color: #0077b5"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="#" class="social-card">
+              <i class="fab fa-instagram" style="color: #e1306c"></i>
+              <span>Instagram</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-copy">
+        Designed & Developed by <span>Yash Choudhary</span> &nbsp;✦&nbsp; 2025
+      </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      // AOS Init
+      AOS.init({
+        duration: 700,
+        easing: "ease-out-cubic",
+        once: true,
+        offset: 60,
+      });
+    </script>
+  </body>
+</html>
