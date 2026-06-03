@@ -32,7 +32,7 @@ export const addProject = async (req, res) => {
 
         })
         console.log("project added.")
-        res.redirect('/api/dashboard')
+        res.redirect('/')
 
     } catch (error) {
         console.log(error.message)
@@ -74,10 +74,10 @@ export const deleteProject = async (req, res) => {
         const project = await Project.findByIdAndDelete(id);
 
         if (!project) {
-            return res.redirect('/api/dashboard');
+            return res.redirect('/');
         }
 
-        res.redirect('/api/dashboard');
+        res.redirect('/');
         
     } catch (error) {
         res.status(500).json({ message: error.message });

@@ -7,7 +7,7 @@ export const Login = async (req, res) => {
 
         req.session.isAuthenticated = true
         console.log("Login successful.")
-        return res.redirect('/api/dashboard')
+        return res.redirect('/')
 
     } catch (error) {
         res.status(500).json({ message: "Internal server problem!" })
