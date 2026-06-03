@@ -11,9 +11,15 @@ import path from 'path'
 import { dashboardRoute } from './src/routes/dashboard.route.js'
 import { skillRoute } from './src/routes/skill.route.js'
 
- const app = express()
+const app = express()
 
- app.use(cors())
+app.use(cors({
+    origin: [
+        'https://iamyashdev.vercel.app',
+        'http://localhost:5500',
+        'http://127.0.0.1:5500'
+    ]
+}))
 app.set('trust proxy', 1);
 app.use(session({
     secret: process.env.SESSION_SECRET,
