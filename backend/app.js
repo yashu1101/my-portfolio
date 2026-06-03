@@ -14,7 +14,7 @@ import { skillRoute } from './src/routes/skill.route.js'
  const app = express()
 
  app.use(cors())
-
+app.set('trust proxy', 1);
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
