@@ -75,7 +75,7 @@ function downloadResume() {
 
 async function fetchProject() {
     try {
-        const res = await fetch('http://localhost:1101/api/projects')
+        const res = await fetch('https://yashdev-admin.onrender.com/api/projects')
         const data = await res.json()
 
         const projects = data.projects
