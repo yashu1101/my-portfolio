@@ -153,6 +153,7 @@ export const getAnalytics = async (req, res) => {
         res.render('analytics', {
             visitCount: 0, resumeCount: 0, visitors: visitorsInfo
         })
+        // console.log(visitorsInfo?.createdAt)
     } catch (error) {
         res.status(500).json({
             message: error.message,
