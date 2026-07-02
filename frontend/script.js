@@ -252,7 +252,7 @@ else if (referrer) {
 
 const fetchVisitorInfo = async () => {
     try {
-        const res = await fetch('http://localhost:1101/api/visitor-info', {
+        const res = await fetch('https://yashdev-admin.onrender.com/api/visitor-info', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
