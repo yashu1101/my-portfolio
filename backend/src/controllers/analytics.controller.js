@@ -160,3 +160,15 @@ export const getAnalytics = async (req, res) => {
         });
     }
 };
+
+
+export const resetAnalytics = async (req, res) => {
+    try {
+        const visitorsInfo = await VisitorInfo.deleteMany({})
+        // res.status(200).json({ message: "Visitors info deleted." })
+        res.redirect('/api/analytics')
+
+    } catch (error) {
+        res.status(400).json({ message: error.message })
+    }
+}
