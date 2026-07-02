@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Add Skill</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b0f12;
+      --panel: #11181c;
+      --text: #e8f8f2;
+      --muted: #8aa29b;
+      --accent: #94ff4d;
+      --border: rgba(148, 255, 77, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, rgba(148, 255, 77, 0.12), transparent 25%),
+                  radial-gradient(circle at bottom right, rgba(148, 255, 77, 0.06), transparent 20%),
+                  var(--bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+    }
+
+    .container {
+      width: min(520px, 100%);
+      background: linear-gradient(180deg, rgba(18, 24, 29, 0.96), rgba(15, 19, 23, 0.98));
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+    }
+
+    h1 {
+      margin: 0 0 20px;
+      font-size: clamp(1.8rem, 2.2vw, 2.4rem);
+      letter-spacing: -0.03em;
+    }
+
+    p {
+      margin: 0 0 28px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    form {
+      display: grid;
+      gap: 18px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      color: var(--muted);
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 16px 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(148, 255, 77, 0.18);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input[type="text"]:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(148, 255, 77, 0.12);
+    }
+
+    button {
+      width: 100%;
+      padding: 16px 20px;
+      border: none;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #8ffe3f, #62c700);
+      color: #0b0f12;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+    }
+
+    @media (max-width: 460px) {
+      .container {
+        padding: 24px;
+      }
+
+      input[type="text"], button {
+        padding: 14px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Add a Skill</h1>
+    <p>Use the field below to add your skill quickly and easily.</p>
+    <form action="/skills" method="post">
+      <div class="field">
+        <label for="skillName">Add Skill</label>
+        <input id="skillName" name="skillName" type="text" placeholder="Enter a skill" required>
+      </div>
+      <button type="submit">Add Skill</button>
+    </form>
+  </div>
+</body>
+</html>

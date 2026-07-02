@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #050607;
+      --surface: #121518;
+      --surface-2: #172024;
+      --text: #e6f7d4;
+      --border: #2c3630;
+      --accent: #a4ff00;
+      --accent-soft: rgba(164, 255, 0, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, rgba(164, 255, 0, 0.12), transparent 28%),
+                  linear-gradient(180deg, #081012 0%, #050607 100%);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+    }
+
+    .login-card {
+      width: min(420px, calc(100vw - 32px));
+      background: linear-gradient(180deg, rgba(18, 24, 28, 0.98), rgba(10, 12, 14, 0.98));
+      border: 1px solid rgba(164, 255, 0, 0.15);
+      border-radius: 24px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+      padding: 36px;
+    }
+
+    .brand {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .login-card p {
+      margin: 0 0 20px;
+      color: #a3b18a;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #c9e69f;
+      font-size: 0.95rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(164, 255, 0, 0.18);
+      background: rgba(20, 26, 29, 0.92);
+      color: var(--text);
+      font-size: 1rem;
+      margin-bottom: 18px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-soft);
+    }
+
+    button {
+      width: 100%;
+      padding: 14px 16px;
+      border: none;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #9efa00, #73c800);
+      color: #0a0a0a;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 30px rgba(164, 255, 0, 0.25);
+    }
+
+    .error {
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: rgba(255, 80, 80, 0.12);
+      color: #ff9b9b;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    @media (max-width: 420px) {
+      body {
+        padding: 16px;
+      }
+
+      .login-card {
+        padding: 28px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-card">
+    <div class="brand">Portfolio Login</div>
+    <p>Access your account with secure credentials.</p>
+    <form action="/api/auth/login" method="POST">  
+      <label for="email">Email</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+      
+        placeholder="name@example.com"
+        required
+      >
+
+      <label for="password">Password</label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+      
+        placeholder="Enter password"
+        required
+      >
+
+      <button type="submit">Login</button>
+    </form>
+    <% if (typeof error !== 'undefined' && error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+  </div>
+</body>
+</html>

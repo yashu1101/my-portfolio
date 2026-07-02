@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background: #1f1f1f;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            border: 2px solid #00ff00;
+        }
+
+        h1 {
+            color: #00ff00;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 28px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            color: #00ff00;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        input[type="text"],
+        input[type="url"],
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background: #2a2a2a;
+            border: 2px solid #333333;
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 14px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="url"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #00ff00;
+            background: #333333;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+        }
+
+        input[type="text"]::placeholder,
+        input[type="url"]::placeholder,
+        textarea::placeholder {
+            color: #666666;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-input-label {
+            display: block;
+            width: 100%;
+            padding: 12px 15px;
+            background: #2a2a2a;
+            border: 2px solid #333333;
+            border-radius: 6px;
+            color: #999999;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .file-input-label:hover {
+            border-color: #00ff00;
+            color: #00ff00;
+        }
+
+        .file-name {
+            color: #00ff00;
+            margin-top: 8px;
+            font-size: 12px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        button {
+            flex: 1;
+            padding: 12px 30px;
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit {
+            background: #00ff00;
+            color: #000000;
+        }
+
+        .btn-submit:hover {
+            background: #00dd00;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
+        .btn-reset {
+            background: #333333;
+            color: #00ff00;
+            border: 2px solid #00ff00;
+        }
+
+        .btn-reset:hover {
+            background: #00ff00;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 15px;
+                border-radius: 8px;
+            }
+
+            h1 {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+
+            .form-group {
+                margin-bottom: 18px;
+            }
+
+            input[type="text"],
+            input[type="url"],
+            textarea {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Project</h1>
+        <form id="projectForm"  action="/api/projects" method="POST" enctype="multipart/form-data">
+            
+            <div class="form-group">
+                <label for="projectTitle">Project Title</label>
+                <input 
+                    type="text" 
+                    id="projectTitle" 
+                    name="title" 
+                    placeholder="Enter project title"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="projectTech">Project Technologies</label>
+                <textarea 
+                    id="projectTech" 
+                    name="techStack" 
+                    placeholder="e.g., React, Node.js, MongoDB, Express"
+                    required
+                ></textarea>
+            </div>
+            <div class="form-group">
+                <label for="projectTech">Project Description</label>
+                <textarea 
+                    id="projectTech" 
+                    name="description" 
+                    placeholder="Describe your project"
+                    
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="projectThumbnail">Project Thumbnail</label>
+                <div class="file-input-wrapper">
+                    <input 
+                        type="file" 
+                        id="projectThumbnail" 
+                        name="image" 
+                        accept="image/*"
+                        required
+                    >
+                    <label for="projectThumbnail" class="file-input-label">
+                        📁 Click to upload thumbnail
+                    </label>
+                    <div class="file-name" id="fileName"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="githubLink">GitHub Link</label>
+                <input 
+                    type="text" 
+                    id="githubLink" 
+                    name="githubLink" 
+                    placeholder="https://github.com/username/project"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="liveLink">Live Link</label>
+                <input 
+                    type="text" 
+                    id="liveLink" 
+                    name="liveLink" 
+                    placeholder="https://your-project.com"
+                    required
+                >
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="btn-submit">Add Project</button>
+                <button type="reset" class="btn-reset">Clear</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('projectThumbnail');
+        const fileName = document.getElementById('fileName');
+
+        fileInput.addEventListener('change', function(e) {
+            if (this.files && this.files[0]) {
+                fileName.textContent = '✓ ' + this.files[0].name;
+            } else {
+                fileName.textContent = '';
+            }
+        });
+
+    
+    </script>
+</body>
+</html>
