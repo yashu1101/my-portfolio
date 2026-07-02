@@ -14,7 +14,7 @@ import { analyticsRoute } from './src/routes/analytics.route.js'
 
 const app = express()
 
-app.set('trust proxy', 1);
+app.set('trust proxy', true);
 app.use(cors({
     origin: [
         'https://iamyashdev.vercel.app',

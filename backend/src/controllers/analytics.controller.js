@@ -79,6 +79,8 @@ export const visitorInfo = async (req, res) => {
     try {
         const ip = req.ip
         console.log("Visitor's ip is: " + ip)
+        console.log("req.ip:", req.ip);
+        console.log("x-forwarded-for:", req.headers["x-forwarded-for"]);
         let location = {};
 
         try {
